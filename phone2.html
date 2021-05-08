@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw&A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+    <title>Smartphone | Design</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .smartphone {
+            position: relative;
+            background: black;
+            height: 580px;
+            width: 300px;
+            margin: 100px;
+            border-radius: 33px;
+            border: 1px black solid;
+            box-shadow: inset 1px 1px 2px 1px rgba(255,255,255, 0.9),
+                                5px 1px 2px 1px rgba(255,255,255, 0.9);
+        }
+
+        .speaker {
+            content: '';
+            position: absolute;
+            top: 0px;
+            right: 50%;
+            background: rgba(20,20,20,1);
+            height: 6px;
+            width: 50px;
+            transform: translateX(50%);
+            border-radius: 20px;
+        }
+
+       
+
+        .dot span{
+            
+            position: absolute;
+            top: -6px;
+            height: 17px;
+            font-size: 20px;
+            color: rgba(16,16,16,0.9);
+            color: rgba(255,255,255,0.5);
+            /*box-shadow: 1px 1px 2px rgba(82, 81, 81, 0.9);*/
+            transform: translateY(-50%);
+            z-index: 10;
+
+        }
+        .network-name {
+            position: absolute;
+            top: 17px;
+            left: 20px;
+            z-index: 1;
+            font-size: 11px;
+            color: white;
+        }
+
+        .fas.fa-signal {
+            position: absolute;
+            top: 17px;
+            left: 70px;
+            font-size: 11px;
+            color: white;
+            z-index: 1;
+        }
+
+        .battery-percent {
+            position: absolute;
+            top: 17px;
+            right: 68px;
+            font-size: 11px;
+            color: white;
+            z-index: 1;
+        }
+
+        .fas.fa-battery-three-quarters {
+            position: absolute;
+            top: 17px;
+            right: 50px;
+            font-size: 11px;
+            color: white;
+            z-index: 1;
+        }
+
+        .time {
+            position: absolute;
+            top: 17px;
+            right: 20px;
+            color: white;
+            font-size: 11px;
+            z-index: 1;
+        }
+
+        .camera::after {
+           content: '';
+           position: absolute;
+           top: 8px;
+           right: 50%;
+           background: black;
+           width: 25px;
+           height: 20px;
+           z-index: 1;
+           border-radius: 0 0 10px 10px;
+           transform: translateX(50%)
+
+        }
+
+        .lens::after {
+            content: '';
+            position: absolute;
+            top: 11px;
+            right: 50%;
+            background: rgba(52,52,52,0.8);
+            box-shadow: inset, 1px 1px 3px 1px rgba(255,255,255, 0.7);
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            z-index: 2;
+            transform: translateX(50%);
+        }
+
+        .lens-white {
+            content: '';
+            position: absolute;
+            top: 13px;
+            right: 50%;
+            background: rgba(16,16,16,0.9);
+            box-shadow: inset 1px 1px 1px 0px rgba(255,255,255, 0.7);
+            height: 9px;
+            width: 9px;
+            border-radius: 50%;
+            z-index: 3;
+            transform: translateX(50%);
+        }
+
+        .screen {
+            position: absolute;
+            top: 15px;
+            right: 9px;
+            background: url('./theme-hauwei.jpg ') no-repeat center center/cover;
+            height: 550px;
+            width: 95%;
+            border-radius: 22px;
+            
+        }
+
+        .day-deatails {
+            background: grey;
+        }
+
+        .search-bar {
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: 13px;
+            border-radius: 30px;
+            background: rgba(220,220,220,0.6);
+            height: 30px;
+            width: 90%;
+            z-index: 1;
+        }
+
+        .google img{
+            position: absolute;
+            top: 240px;
+            left: 30px;
+            height: 20px;
+            width: 20px;
+            z-index: 2;
+        }
+
+        .voice img{
+            position: absolute;
+            top: 240px;
+            right: 35px;
+            height: 20px;
+            width: 20px;
+            z-index: 2;
+            
+        }
+
+        .fas.fa-caret-left {
+            position: absolute;
+            bottom: 18px;
+            left:  25%;
+            color: white;
+           font-size: 37px;
+           opacity: 0.6;
+        }
+
+        .fas.fa-circle {
+            position: absolute;
+            bottom: 25px;
+            left:  50%;
+            color: white;
+           font-size: 21px;
+           opacity: 0.6;
+           transform: translateX(-50%);
+        }
+        .fas.fa-square {
+            position: absolute;
+            bottom: 25px;
+            right:  25%;
+            color: white;
+           font-size: 21px;
+           opacity: 0.6;
+        }
+
+        .row-1 {
+            position: absolute;
+            left:3%;
+            /*bottom:170px ;*/
+            bottom: 185px;
+            padding: 0 0 30px 0;
+            display: flex; 
+        }
+        .row-2 {
+            position: absolute;
+            left:3%;
+            bottom:100px ;
+            padding: 0 0 30px 0;
+            display: flex; 
+        }
+        .row-3 {
+            position: absolute;
+            left:3%;
+            bottom:30px ;
+            padding: 0 0 30px 0;
+            display: flex; 
+        }
+
+        .col-4 {
+           
+            flex-basis:25%; 
+
+        }
+
+        .col-4 img {
+            padding: 0 7px;
+            width: 87%;
+            object-fit: cover;
+            height: 40px; 
+            
+        }
+
+        .row-1 span, .row-2 span, .row-3 span {
+            color: white;
+            font-size: 13px;
+            padding-left: 10px;
+        }
+           
+        
+        .day-details {
+            
+            position: absolute;
+            top: 90px;
+            left: 40px;
+            padding: 0 20px;
+            
+        }
+
+        .city{
+            color: white;
+            font-size: 14px;
+            padding-left: 5px;
+        }
+
+        .fas.fa-home {
+            font-size: 10px;
+            padding-left: 5px;
+        }
+
+        .time-big {
+            color: white;
+            font-size: 40px;
+            
+        }
+
+        .morning {
+            color: white;
+            font-size: 12px;
+        }
+
+        .fas.fa-cloud-sun {
+            position: absolute;
+            top: 21px;
+            right: -30px;
+            padding-right: 10px;
+            color: rgba(255,215,0);
+            
+        }
+
+        .temp {
+            position: absolute;
+            top: 39px;
+            right: -20px;
+            font-size: 13px;
+            color: white;
+        }
+
+        .day {
+            color: white;
+            font-size: 15px;
+            padding-left: 5px;
+        }
+
+       
+        
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="smartphone">
+        <div class="top">
+            <div class="speaker">
+                <div class="dot"><span>.........</span></div>
+              
+            </div>
+        </div>
+        <div class="network-name">
+            <span>MTN-SA</span>
+        </div>
+        <div class="signal"><i class="fas fa-signal"></i></div>
+        <div class="camera">
+            <div class="lens">
+                <div class="lens-white"></div>
+            </div>
+        </div>
+        <div class="battery-percent"><span>76%</span></div>
+        <div class="battery"><i class="fas fa-battery-three-quarters"></i></div>
+        <div class="time"><span>10:12</span></div>
+
+
+        <div class="screen">
+            <div class="search-bar"></div>
+        </div>
+
+        <div class="day-details">
+
+            <p class="city">Polokwane<i class="fas fa-home"></i></p>
+            <span class="time-big">10:12</span>
+            <span class="morning">AM</span>
+            <i class="fas fa-cloud-sun"></i>
+            <span class="temp">20</span>
+            <p class="day">Friday, May 7</p>
+
+        </div>
+
+        <div class="google">
+             <img src="./images/google-logo.png" alt="">
+        </div>
+       
+        <div class="voice">
+            <img class="voice" src="./images/google-voice-logo.png" alt="">
+        </div>
+
+        <div class="row-1">
+            <div class="col-4">
+                <img src="./images/whatsApp-logo.png" alt="">
+                <span>WhatsApp</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/youtube-logo.png" alt="">
+                <span>YouTube</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/music.png" alt="">
+                <span>Music</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/tiktok-logo.png" alt="">
+                <span>TikTok</span>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="col-4">
+                <img src="./images/play-store-logo.png" alt="">
+                <span>Play Store</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/Settings-logo.png" alt="">
+                <span>Settings</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/insta-logo.png" alt="">
+                <span>Instagram</span>
+            </div>
+            <div class="col-4">
+                <img src="./images/google-photos-logo.png" alt="">
+                <span>Photos</span>
+            </div>
+        </div>
+
+        <div class="row-3">
+            <div class="col-4">
+                <img src="./images/Phone-logo.png" alt="">
+            </div>
+            <div class="col-4">
+                <img src="./images/message-logo.png" alt="">
+            </div>
+            <div class="col-4">
+                <img src="./images/chrome-logo.png" alt="">
+            </div>
+            <div class="col-4">
+                <img src="./images/Camera-logo.png" alt="">
+            </div>
+        </div>
+        
+        <div class="bottom">
+            <div class="back"><i class="fas fa-caret-left"></i></div>
+            <div class="home"><i class="fas fa-circle"></i></div>
+            <div class="btn"><i class="fas fa-square"></i></div>
+        </div>
+
+    </div>
+</body>
+</html>
